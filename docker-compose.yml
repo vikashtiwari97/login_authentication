@@ -1,0 +1,19 @@
+version: "3.8"
+services:
+  nest-postgres-ecom:
+    image: postgres:14
+    #container name change
+    container_name: leaning-DB
+    restart: always
+    #port name change according to port 
+    ports:
+      - "5433:5432"
+    env_file:
+      - .env
+    volumes:
+      - nest-postgres:/var/lib/postgresql/data
+
+volumes:
+  nest-postgres:
+  #change db name 
+    name: practice-db-learning
