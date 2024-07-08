@@ -24,3 +24,15 @@ model user {
 
   @@map("users")
 }
+
+model admin {
+  id          Int     @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  full_name String  
+  last_name String
+  hashedRT String?
+  isActive Boolean @default(true)
+
+  @@map("admin")
+}
